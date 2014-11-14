@@ -1,0 +1,21 @@
+{
+    "name": "style-check",
+    "description": "Performs code style checking",
+    "version": "0.1.0",
+    "private": false,
+    "main": "./lib/jscs/jscsChecker",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/soldotno/style-check.git"
+    },
+    "engines": {
+        "node": "0.10.30"
+    },
+    "dependencies": {
+        "gulp": "*",
+        "gulp-jscs": "*"
+    },
+    "scripts": {
+        "style-check": "gulp style-check"
+    }
+}
