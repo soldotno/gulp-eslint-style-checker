@@ -1,12 +1,12 @@
 {
-    "name": "style-check",
+    "name": "sol-style-check",
     "description": "Performs code style checking",
     "version": "0.1.0",
     "private": false,
     "main": "./lib/jscs/jscsChecker",
     "repository": {
         "type": "git",
-        "url": "git://github.com/soldotno/style-check.git"
+        "url": "git://github.com/soldotno/sol-style-check.git"
     },
     "engines": {
         "node": "0.10.30"
