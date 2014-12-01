@@ -13,6 +13,7 @@
     "disallowSpacesInsideObjectBrackets": true,
     "disallowSpacesInsideArrayBrackets": true,
     "disallowSpacesInsideParentheses": true,
+    "disallowSpaceAfterObjectKeys": true,
     "disallowQuotedKeysInObjects": "allButReserved",
     "requireCommaBeforeLineBreak": true,
     "requireOperatorBeforeLineBreak": ["?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
