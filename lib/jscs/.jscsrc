@@ -16,7 +16,7 @@
     "disallowSpaceAfterObjectKeys": true,
     "disallowQuotedKeysInObjects": "allButReserved",
     "requireCommaBeforeLineBreak": true,
-    "requireOperatorBeforeLineBreak": ["?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
+    "requireOperatorBeforeLineBreak": ["+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
     "requireSpacesInConditionalExpression": true,
     "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
     "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
@@ -28,7 +28,7 @@
     "disallowMixedSpacesAndTabs": true,
     "disallowTrailingWhitespace": true,
     "disallowKeywordsOnNewLine": ["else"],
-    "maximumLineLength": 160,
+    "maximumLineLength": 120,
     "requireCapitalizedConstructors": true,
     "requireDotNotation": true,
     "excludeFiles": ["node_modules/**"]

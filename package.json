@@ -1,7 +1,7 @@
 {
     "name": "sol-style-check",
     "description": "Performs code style checking",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "private": false,
     "main": "./lib/jscs/jscsChecker",
     "repository": {
