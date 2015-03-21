@@ -23,7 +23,6 @@
     "requireSpaceBeforeBinaryOperators": [">", ">=", "<", "<=", "+", "-", "/", "*", "=", "==", "===", "!=", "!=="],
     "requireSpaceAfterBinaryOperators": [">", ">=", "<", "<=", "+", "-", "/", "*", "=", "==", "===", "!=", "!=="],
     "disallowKeywords": ["with"],
-    "disallowMultipleLineBreaks": true,
     "validateQuoteMarks": "'",
     "disallowMixedSpacesAndTabs": true,
     "disallowTrailingWhitespace": true,
