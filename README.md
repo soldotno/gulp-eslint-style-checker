@@ -1,8 +1,11 @@
 Sol style checker
 ===========
 
-Performs code style check by using jscs. Is by default setup with the style Sol is using. and is by default checking all `.js` files in the repo. (Exlcuding node_modules). Also support React. 
+Performs code style check by using jscs. Is by default setup with the style Sol is using. and is by default checking all `.js` files in the repo. (Exlcuding node_modules).
 
+
+### Requirments / Peer Dependencies
+Gulp.
 
 ## Usage 
 
@@ -13,12 +16,22 @@ that has 2 parameters;
  The files to check Same as the first argument to `jscs`
 
 * config  
- Path to the configfile. Same as `--config` option in `jscs`
+ Path to the configfile. Same as `--config` option in `jscs`. Also 'esprima-fb' can be used.
+ Then you will use the default sol check style with support for jsx.
 
-## Example 
+## React / JSX / esprima-fb
+If you are using react with jsx or need to validate against esprima-fb.
+jscs support that by using the esprima-fb package.
 
 ```js
-var styleCheck = require('sol-style-check');
+const styleCheck = require('sol-style-check');
+gulp.task('style-check', styleCheck(null, 'esprima-fb'));
+```
+
+## Example
+
+```js
+const styleCheck = require('sol-style-check');
 gulp.task('style-check', styleCheck());
 ``` 
 

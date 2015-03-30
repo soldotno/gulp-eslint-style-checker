@@ -8,13 +8,12 @@
     "type": "git",
     "url": "git://github.com/soldotno/sol-style-check.git"
   },
-  "engines": {
-    "node": "0.10.30"
-  },
   "dependencies": {
-    "gulp": "*",
-    "gulp-jscs": "*",
+    "gulp-jscs": "1.4.0",
     "esprima-fb": "10001.1.0-dev-harmony-fb"
+  },
+  "peerDependencies": {
+    "gulp": ">= 3.x.x"
   },
   "scripts": {
     "style-check": "gulp style-check"
