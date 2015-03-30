@@ -2,6 +2,9 @@ Sol style checker
 ===========
 
 [![Build Status](https://travis-ci.org/soldotno/sol-style-check.svg?branch=develop)](https://travis-ci.org/soldotno/sol-style-check.svg?branch=develop)
+[![Dependencies Status](https://david-dm.org/soldotno/sol-style-check.svg?style=flat)](https://david-dm.org/soldotno/sol-style-check.svg)
+[![DevDependencies Status](https://david-dm.org/soldotno/sol-style-check/dev-status.svg?style=flat)](https://david-dm.org/soldotno/sol-style-check/#info=devDependencies)
+
 
 Performs code style check by using jscs. Is by default setup with the style Sol is using.
 And is by default checking all `.js` files in the repo. (Excluding node_modules).
