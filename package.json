@@ -9,16 +9,19 @@
     "url": "git://github.com/soldotno/sol-style-check.git"
   },
   "scripts": {
-    "test": "gulp style-check"
+    "test": "gulp"
   },
   "dependencies": {
-    "gulp-jscs": "1.4.0",
-    "esprima-fb": "10001.1.0-dev-harmony-fb"
+    "gulp-jscs": "1.4.0"
   },
   "peerDependencies": {
-    "gulp": ">= 3.x.x"
+    "gulp": "~3.x.x",
+    "esprima-fb": "13001.1.0-dev-harmony-fb",
+    "jscs": "~1.12.0"
   },
   "devDependencies": {
-    "gulp": "3.8.11"
+    "gulp": "3.8.11",
+    "esprima-fb": "13001.1.0-dev-harmony-fb",
+    "jscs": "~1.12.0"
   }
 }
