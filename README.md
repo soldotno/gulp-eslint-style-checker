@@ -1,6 +1,8 @@
 Sol style checker
 ===========
 
+
+
 Performs code style check by using jscs. Is by default setup with the style Sol is using. and is by default checking all `.js` files in the repo. (Exlcuding node_modules).
 
 
