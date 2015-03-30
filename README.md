@@ -1,10 +1,10 @@
 Sol style checker
 ===========
 
+[![Build Status](https://travis-ci.org/soldotno/sol-style-check.svg?branch=develop)](https://travis-ci.org/soldotno/sol-style-check.svg?branch=develop)
 
-
-Performs code style check by using jscs. Is by default setup with the style Sol is using. and is by default checking all `.js` files in the repo. (Exlcuding node_modules).
-
+Performs code style check by using jscs. Is by default setup with the style Sol is using.
+And is by default checking all `.js` files in the repo. (Excluding node_modules).
 
 ### Requirments / Peer Dependencies
 Gulp.
