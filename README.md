@@ -1,11 +1,11 @@
 Sol style checker
 ===========
 
-[![Build Status](https://travis-ci.org/soldotno/sol-style-check.svg?branch=develop)](https://travis-ci.org/soldotno/sol-style-check.svg?branch=develop)
-[![Dependencies Status](https://david-dm.org/soldotno/sol-style-check.svg?style=flat)](https://david-dm.org/soldotno/sol-style-check.svg)
-[![DevDependencies Status](https://david-dm.org/soldotno/sol-style-check/dev-status.svg?style=flat)](https://david-dm.org/soldotno/sol-style-check/#info=devDependencies)
-[![npm version](https://badge.fury.io/js/sol-style-check.svg)](http://badge.fury.io/js/sol-style-check)
-[![Code Climate](https://codeclimate.com/github/soldotno/sol-style-check/badges/gpa.svg)](https://codeclimate.com/github/soldotno/sol-style-check)
+[![Build Status](https://travis-ci.org/soldotno/sol-style-checker.svg?branch=develop)](https://travis-ci.org/soldotno/sol-style-checker.svg?branch=develop)
+[![Dependencies Status](https://david-dm.org/soldotno/sol-style-checker.svg?style=flat)](https://david-dm.org/soldotno/sol-style-checker.svg)
+[![DevDependencies Status](https://david-dm.org/soldotno/sol-style-checker/dev-status.svg?style=flat)](https://david-dm.org/soldotno/sol-style-checker/#info=devDependencies)
+[![npm version](https://badge.fury.io/js/sol-style-checker.svg)](http://badge.fury.io/js/sol-style-checker)
+[![Code Climate](https://codeclimate.com/github/soldotno/sol-style-checker/badges/gpa.svg)](https://codeclimate.com/github/soldotno/sol-style-checker)
 
 Performs code style check by using jscs. Is by default setup with the style Sol is using.
 And is by default checking all `.js` files in the repo. (Excluding node_modules).
