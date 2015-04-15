@@ -1,12 +1,12 @@
 {
-  "name": "sol-style-check",
+  "name": "sol-style-checker",
   "description": "Performs code style checking",
   "version": "1.2.0",
   "private": false,
   "main": "./lib/jscs/jscsChecker",
   "repository": {
     "type": "git",
-    "url": "git://github.com/soldotno/sol-style-check.git"
+    "url": "git://github.com/soldotno/sol-style-checker.git"
   },
   "scripts": {
     "test": "gulp"
