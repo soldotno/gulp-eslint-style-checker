@@ -14,7 +14,8 @@
     ],
     "globals": {
       "before": true,
-      "assert": true
+      "assert": true,
+      "path": true
     },
     "rules": {
       "consistent-return": 0,
