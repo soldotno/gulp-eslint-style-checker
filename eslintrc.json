@@ -23,6 +23,7 @@
       "no-multi-spaces": 0,
       "strict": 1,
       "no-extra-strict": 0,
+      "space-infix-ops": 0,
       "quotes": 0,
       "no-unused-vars": 1,
       "camelcase": 0,
