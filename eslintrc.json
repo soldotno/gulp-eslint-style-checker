@@ -30,7 +30,7 @@
       "no-underscore-dangle": 0,
       "eol-last": 0,
       "no-mixed-spaces-and-tabs": 1,
-      "max-len": 80,
+      "max-len": 120,
       "new-cap": 0
     }
 }
