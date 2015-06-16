@@ -1,7 +1,7 @@
 Sol style checker
 ===========
 
-[![Build Status](https://travis-ci.org/soldotno/sol-style-checker.svg?branch=develop)](https://travis-ci.org/soldotno/sol-style-checker.svg?branch=develop)
+[![Build Status](https://travis-ci.org/soldotno/sol-style-checker.svg)](https://travis-ci.org/soldotno/sol-style-checker.svg)
 [![Dependencies Status](https://david-dm.org/soldotno/sol-style-checker.svg?style=flat)](https://david-dm.org/soldotno/sol-style-checker.svg)
 [![DevDependencies Status](https://david-dm.org/soldotno/sol-style-checker/dev-status.svg?style=flat)](https://david-dm.org/soldotno/sol-style-checker/#info=devDependencies)
 [![npm version](https://badge.fury.io/js/sol-style-checker.svg)](http://badge.fury.io/js/sol-style-checker)
@@ -22,8 +22,10 @@ that has one parameters;
 
 ## Example
 
+if your gulp config is in the gulpfile of your root directory
+
 ```js
 const styleCheck = require('sol-style-check');
-gulp.task('style-check', styleCheck(.));
+gulp.task('style-check', styleCheck(__dirname));
 ``` 
 
