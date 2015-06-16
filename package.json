@@ -1,12 +1,13 @@
 {
-  "name": "sol-style-checker",
-  "description": "Performs code style checking using eslint",
+  "name": "gulp-eslint-style-checker",
+  "description": "Performs code style checking using eslint trough gulp",
   "version": "2.0.0",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/soldotno/sol-style-checker.git"
+    "url": "git://github.com/soldotno/gulp-eslint-style-checker.git"
   },
+  "keywords": ["eslint", "eslintconfig", "gulp", "Code style checker"],
   "scripts": {
     "test": "gulp style-check"
   },
@@ -17,7 +18,7 @@
     "babel-eslint": "3.1.15",
     "eslint": "0.23.0",
     "eslint-plugin-react": "2.5.2",
-    "gulp-eslint": "^0.13.2"
+    "gulp-eslint": "0.13.2"
   },
   "devDependencies": {
     "gulp": "3.9.0"

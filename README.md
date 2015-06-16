@@ -1,11 +1,11 @@
 Sol style checker
 ===========
 
-[![Build Status](https://travis-ci.org/soldotno/sol-style-checker.svg)](https://travis-ci.org/soldotno/sol-style-checker.svg)
-[![Dependencies Status](https://david-dm.org/soldotno/sol-style-checker.svg?style=flat)](https://david-dm.org/soldotno/sol-style-checker.svg)
-[![DevDependencies Status](https://david-dm.org/soldotno/sol-style-checker/dev-status.svg?style=flat)](https://david-dm.org/soldotno/sol-style-checker/#info=devDependencies)
-[![npm version](https://badge.fury.io/js/sol-style-checker.svg)](http://badge.fury.io/js/sol-style-checker)
-[![Code Climate](https://codeclimate.com/github/soldotno/sol-style-checker/badges/gpa.svg)](https://codeclimate.com/github/soldotno/sol-style-checker)
+[![Build Status](https://travis-ci.org/soldotno/gulp-eslint-style-checker.svg)](https://travis-ci.org/soldotno/gulp-eslint-style-checker.svg)
+[![Dependencies Status](https://david-dm.org/soldotno/gulp-eslint-style-checker.svg?style=flat)](https://david-dm.org/soldotno/gulp-eslint-style-checker.svg)
+[![DevDependencies Status](https://david-dm.org/soldotno/gulp-eslint-style-checker/dev-status.svg?style=flat)](https://david-dm.org/soldotno/gulp-eslint-style-checker/#info=devDependencies)
+[![npm version](https://badge.fury.io/js/gulp-eslint-style-checker.svg)](http://badge.fury.io/js/gulp-eslint-style-checker)
+[![Code Climate](https://codeclimate.com/github/soldotno/gulp-eslint-style-checker/badges/gpa.svg)](https://codeclimate.com/github/soldotno/gulp-eslint-style-checker)
 
 Performs code style check by using eslint. Is by default setup with the style Sol is using.
 
@@ -25,7 +25,7 @@ that has one parameters;
 if your gulp config is in the gulpfile of your root directory
 
 ```js
-const styleCheck = require('sol-style-check');
-gulp.task('style-check', styleCheck(__dirname));
+const styleChecker = require('gulp-eslint-style-checker');
+gulp.task('style-check', styleChecker(__dirname));
 ``` 
 
