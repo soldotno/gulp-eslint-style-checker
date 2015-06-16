@@ -1,14 +1,13 @@
 Sol style checker
 ===========
 
-[![Build Status](https://travis-ci.org/soldotno/sol-style-checker.svg?branch=develop)](https://travis-ci.org/soldotno/sol-style-checker.svg?branch=develop)
-[![Dependencies Status](https://david-dm.org/soldotno/sol-style-checker.svg?style=flat)](https://david-dm.org/soldotno/sol-style-checker.svg)
-[![DevDependencies Status](https://david-dm.org/soldotno/sol-style-checker/dev-status.svg?style=flat)](https://david-dm.org/soldotno/sol-style-checker/#info=devDependencies)
-[![npm version](https://badge.fury.io/js/sol-style-checker.svg)](http://badge.fury.io/js/sol-style-checker)
-[![Code Climate](https://codeclimate.com/github/soldotno/sol-style-checker/badges/gpa.svg)](https://codeclimate.com/github/soldotno/sol-style-checker)
+[![Build Status](https://travis-ci.org/soldotno/gulp-eslint-style-checker.svg)](https://travis-ci.org/soldotno/gulp-eslint-style-checker.svg)
+[![Dependencies Status](https://david-dm.org/soldotno/gulp-eslint-style-checker.svg?style=flat)](https://david-dm.org/soldotno/gulp-eslint-style-checker.svg)
+[![DevDependencies Status](https://david-dm.org/soldotno/gulp-eslint-style-checker/dev-status.svg?style=flat)](https://david-dm.org/soldotno/gulp-eslint-style-checker/#info=devDependencies)
+[![npm version](https://badge.fury.io/js/gulp-eslint-style-checker.svg)](http://badge.fury.io/js/gulp-eslint-style-checker)
+[![Code Climate](https://codeclimate.com/github/soldotno/gulp-eslint-style-checker/badges/gpa.svg)](https://codeclimate.com/github/soldotno/gulp-eslint-style-checker)
 
-Performs code style check by using jscs. Is by default setup with the style Sol is using.
-And is by default checking all `.js` files in the repo. (Excluding node_modules).
+Performs code style check by using eslint. Is by default setup with the style Sol is using.
 
 ### Requirements / Peer Dependencies
 Gulp.
@@ -16,28 +15,17 @@ Gulp.
 ## Usage 
 
 We use gulp as our build tool, and this package exposes a style-checker function 
-that has 2 parameters;
+that has one parameters;
 
-* files  
- The files to check Same as the first argument to `jscs`
-
-* config  
- Path to the configfile. Same as `--config` option in `jscs`. Also 'esprima-fb' can be used.
- Then you will use the default sol check style with support for jsx.
-
-## React / JSX / esprima-fb
-If you are using react with jsx or need to validate against esprima-fb.
-jscs support that by using the esprima-fb package.
-
-```js
-const styleCheck = require('sol-style-check');
-gulp.task('style-check', styleCheck(null, 'esprima-fb'));
-```
+* directory  
+ The directory to check, in reality the argument is passed straigt to `gulp.src(directory)` 
 
 ## Example
 
+if your gulp config is in the gulpfile of your root directory
+
 ```js
-const styleCheck = require('sol-style-check');
-gulp.task('style-check', styleCheck());
+const styleChecker = require('gulp-eslint-style-checker');
+gulp.task('style-check', styleChecker(__dirname));
 ``` 
 
