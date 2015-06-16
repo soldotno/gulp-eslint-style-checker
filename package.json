@@ -3,6 +3,7 @@
   "description": "Performs code style checking using eslint trough gulp",
   "version": "2.0.0",
   "private": false,
+  "main": "./lib/eslintChecker.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/soldotno/gulp-eslint-style-checker.git"
