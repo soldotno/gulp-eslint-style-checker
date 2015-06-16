@@ -30,8 +30,11 @@
       "no-underscore-dangle": 0,
       "eol-last": 0,
       "no-mixed-spaces-and-tabs": 1,
-      "max-len": "120",
-      "key-spacing": false,
+      "max-len": [2, 120, 4],
+      "key-spacing": [2, {
+        "beforeColon": false,
+        "afterColon": true
+      }],
       "new-cap": 0
     }
 }
