@@ -26,6 +26,9 @@ if your gulp config is in the gulpfile of your root directory
 
 ```js
 const styleChecker = require('gulp-eslint-style-checker');
-gulp.task('style-check', styleChecker(__dirname));
+
+gulp.task('style-check', function() {
+    return styleCheck('**/*.js');
+});
 ``` 
 
