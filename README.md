@@ -1,4 +1,4 @@
-Sol style checker
+Eslint Style Checker
 ===========
 
 [![Build Status](https://travis-ci.org/soldotno/gulp-eslint-style-checker.svg)](https://travis-ci.org/soldotno/gulp-eslint-style-checker.svg)
@@ -7,22 +7,18 @@ Sol style checker
 [![npm version](https://badge.fury.io/js/gulp-eslint-style-checker.svg)](http://badge.fury.io/js/gulp-eslint-style-checker)
 [![Code Climate](https://codeclimate.com/github/soldotno/gulp-eslint-style-checker/badges/gpa.svg)](https://codeclimate.com/github/soldotno/gulp-eslint-style-checker)
 
-Performs code style check by using eslint. Is by default setup with the style Sol is using.
-
-### Requirements / Peer Dependencies
-Gulp.
+Performs code style check by using eslint and gulp (optional)
 
 ## Usage 
 
-We use gulp as our build tool, and this package exposes a style-checker function 
+Eslint style checker used by the development team in Scandinavia Online. 
+
+### Gulp 
+If you use gulp as a build tool, this package exposes a style-checker function 
 that has one parameters;
 
-* directory  
- The directory to check, in reality the argument is passed straigt to `gulp.src(directory)` 
-
-## Example
-
-if your gulp config is in the gulpfile of your root directory
+* file-pattern  
+ The directory to check, in reality the argument is passed straight to `gulp.src(file-pattern)` 
 
 ```js
 const styleChecker = require('gulp-eslint-style-checker');
@@ -30,5 +26,16 @@ const styleChecker = require('gulp-eslint-style-checker');
 gulp.task('style-check', function() {
     return styleCheck('**/*.js');
 });
-``` 
+```
+ if you use this option we expect you to have installed gulp in your application. 
 
+### NPM Script 
+If you want to skip gulp and just use eslint directly that is also possible by adding this to your `package.json` file 
+ 
+```json
+"scripts": {
+    "style-check": "./node_modules/gulp-eslint-style-checker/node_modules/.bin/eslint -c ./node_modules/gulp-eslint-style-checker/eslintrc.json **/*.js"
+}
+```
+
+then this can be executed by running `npm run style-check`. This is not dependent on any packages 
