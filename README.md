@@ -21,7 +21,7 @@ that has one parameters;
  The directory to check, in reality the argument is passed straight to `gulp.src(file-pattern)` 
 
 ```js
-const styleChecker = require('gulp-eslint-style-checker');
+const styleCheck = require('gulp-eslint-style-checker');
 
 gulp.task('style-check', function() {
     return styleCheck('**/*.js');
