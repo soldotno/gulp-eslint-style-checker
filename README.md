@@ -9,25 +9,33 @@ Eslint Style Checker
 
 Performs code style check by using eslint and gulp (optional)
 
+## Code style
+We make use of the [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) package with a few custom rules inspired by [this blog post](http://blog.javascripting.com/2015/09/07/fine-tuning-airbnbs-eslint-config/).
+
 ## Usage 
 
 Eslint style checker used by the development team in Scandinavia Online. 
 
 ### Gulp 
 If you use gulp as a build tool, this package exposes a style-checker function 
-that has one parameters;
+that has two parameters;
 
 * file-pattern  
  The directory to check, in reality the argument is passed straight to `gulp.src(file-pattern)` 
+* config  
+ If you want to use a custom config, the path to it can be passed as the second parameter.
 
 ```js
 const styleCheck = require('gulp-eslint-style-checker');
 
 gulp.task('style-check', function() {
-    return styleCheck('**/*.js');
+    return styleCheck('**/*.js', 'optional/path/to/custom/eslintrc.json');
 });
 ```
  if you use this option we expect you to have installed gulp in your application. 
+
+#### Custom config
+You can use your own eslint config by either passing the path to it as a second parameter to `styleCheck` or by passing the path as a command line argument: `gulp style-check --config path/to/eslintrc.json`.
 
 ### NPM Script 
 If you want to skip gulp and just use eslint directly that is also possible by adding this to your `package.json` file 
