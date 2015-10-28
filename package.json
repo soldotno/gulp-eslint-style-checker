@@ -15,6 +15,7 @@
     "Code style checker"
   ],
   "scripts": {
+    "postinstall": "node ./node_modules/babel/bin/babel.js src/ --out-dir lib/",
     "test": "gulp style-check --config eslintrc.json"
   },
   "optionalDependencies": {
