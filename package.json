@@ -1,7 +1,7 @@
 {
   "name": "gulp-eslint-style-checker",
   "description": "Performs code style checking using eslint trough gulp",
-  "version": "2.0.5",
+  "version": "3.0.0",
   "private": false,
   "main": "./lib/eslintChecker.js",
   "repository": {
