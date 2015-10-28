@@ -26,9 +26,9 @@ that has two parameters;
  If you want to use a custom config, the path to it can be passed as the second parameter.
 
 ```js
-const styleCheck = require('gulp-eslint-style-checker');
+import { styleCheck } from 'gulp-eslint-style-checker':
 
-gulp.task('style-check', function() {
+gulp.task('style-check', () => {
     return styleCheck('**/*.js', 'optional/path/to/custom/eslintrc.json');
 });
 ```
