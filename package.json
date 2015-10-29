@@ -28,6 +28,6 @@
     "minimist": "1.2.0"
   },
   "devDependencies": {
-    "gulp": "3.9.0",
+    "gulp": "3.9.0"
   }
 }
