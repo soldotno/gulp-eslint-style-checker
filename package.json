@@ -1,7 +1,7 @@
 {
   "name": "gulp-eslint-style-checker",
   "description": "Performs code style checking using eslint trough gulp",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "private": false,
   "main": "./lib/eslintChecker.js",
   "repository": {
@@ -15,11 +15,8 @@
     "Code style checker"
   ],
   "scripts": {
-    "postinstall": "node ./node_modules/babel/bin/babel.js src/ --out-dir lib/",
+    "prepublish": "babel src/ --out-dir lib/",
     "test": "gulp style-check --config eslintrc.json"
-  },
-  "optionalDependencies": {
-    "gulp": ">3.0.0"
   },
   "dependencies": {
     "babel": "5.8.29",
@@ -31,6 +28,6 @@
     "minimist": "1.2.0"
   },
   "devDependencies": {
-    "gulp": "3.9.0"
+    "gulp": "3.9.0",
   }
 }
