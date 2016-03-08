@@ -7,8 +7,9 @@
 #       Martin Stabenfeldt <martin@stabenfeldt.net>
 #
 
-STYLE_CHECKER = './node_modules/gulp-eslint-style-checker/node_modules/.bin/eslint -c ./node_modules/gulp-eslint-style-checker/eslintrc.json'
-GITHUB_REPO = open('.git/config').grep(/github/).first.match(/.*:(.*).git/)[1]
+ESLINT        = './node_modules/eslint/bin/eslint.js'
+STYLE_CHECKER = "#{ESLINT} -c ./node_modules/gulp-eslint-style-checker/eslintrc.json"
+GITHUB_REPO   = open('.git/config').grep(/github/).first.match(/.*:(.*).git/)[1]
 
 
 def remove_missing_files(files)
@@ -31,8 +32,8 @@ def style_check_modfied_files
   cleaned = remove_missing_files(files)
 
   if cleaned.size >= 1
-    puts "\n\nInspecting #{cleaned}"
-    system("npm install gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
+    system("npm i gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
+    system("npm i eslint") unless File.exist?(ESLINT)
     puts "Running #{STYLE_CHECKER} #{cleaned}"
     @report = `#{STYLE_CHECKER} #{cleaned}`
   else
