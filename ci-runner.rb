@@ -13,8 +13,10 @@ GITHUB_REPO = open('.git/config').grep(/github/).first.match(/.*:(.*).git/)[1]
 raise "ENV['GITHUB_TOKEN'] not set" unless ENV['GITHUB_TOKEN']
 
 def remove_missing_files(files)
-  files.select { |file| File.exists?(file) }
-  files.join(' ')
+  return if files.empty?
+  puts "files is #{files}"
+  files.split.select { |file| File.exists?(file) }
+  files.join(' ') if files.size > 1
 end
 
 def style_check_modfied_files
