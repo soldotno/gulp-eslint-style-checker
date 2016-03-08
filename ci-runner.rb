@@ -22,7 +22,7 @@ def style_check_modfied_files
   if ENV['CI']
     # The master branch is not available on the build server.
     token = ENV['GITHUB_TOKEN']
-    url   = "https://api.github.com/repos/#{GITHUB_REPO}/compare/master...#{current_sha}?access_token = #{token}"
+    url   = "https://api.github.com/repos/#{GITHUB_REPO}/compare/master...#{current_sha}?access_token=#{token}"
     files = `curl -i #{url} | grep filename | cut -f2 -d: | grep \.js | tr '"', '\ '`
   else
     files = `git diff master #{current_sha} --name-only | grep .js`
