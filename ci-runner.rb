@@ -14,8 +14,8 @@ raise "ENV['GITHUB_TOKEN'] not set" unless ENV['GITHUB_TOKEN']
 
 def remove_missing_files(files)
   return if files.empty?
-  files.split.select { |file| File.exists?(file) }
-  files.join(' ') if files.size > 1
+  existing_files = files.split.select { |file| File.exists?(file) }
+  existing_files.join(' ') if existing_files.size > 1
 end
 
 def style_check_modfied_files
