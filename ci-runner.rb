@@ -32,7 +32,7 @@ def style_check_modfied_files
 
   if files.size > 1
     puts "\n\nInspecting #{files}"
-    system("npm install gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json /dev/null 2>&1")
+    system("npm install gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
   else
     puts 'No changes made'
   end
