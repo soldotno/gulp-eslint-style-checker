@@ -1,7 +1,7 @@
 # Compares the files that has been changed between this branch and master.
 #
 # USAGE
-#       curl https://raw.githubusercontent.com/soldotno/gulp-eslint-style-checker/master/ci-runner.rb | ruby
+#       curl -s https://raw.githubusercontent.com/soldotno/gulp-eslint-style-checker/master/ci-runner.rb | ruby
 #
 # AUTHOR
 #       Martin Stabenfeldt <martin@stabenfeldt.net>
