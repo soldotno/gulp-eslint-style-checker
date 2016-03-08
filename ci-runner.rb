@@ -31,7 +31,7 @@ def style_check_modfied_files
   files.tr!("\n", ' ')
   cleaned = remove_missing_files(files)
 
-  if cleaned.size >= 1
+  if cleaned && cleaned.size >= 1
     system("npm i gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
     system("npm i eslint") unless File.exist?(ESLINT)
     puts "Running #{STYLE_CHECKER} #{cleaned}"
