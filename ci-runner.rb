@@ -10,7 +10,6 @@
 STYLE_CHECKER = './node_modules/gulp-eslint-style-checker/node_modules/.bin/eslint -c ./node_modules/gulp-eslint-style-checker/eslintrc.json'
 GITHUB_REPO = open('.git/config').grep(/github/).first.match(/.*:(.*).git/)[1]
 
-raise "ENV['GITHUB_TOKEN'] not set" unless ENV['GITHUB_TOKEN']
 
 def remove_missing_files(files)
   return if files.empty?
@@ -22,22 +21,23 @@ def style_check_modfied_files
   current_sha = `git rev-parse --verify HEAD`.strip!
   if ENV['CI']
     # The master branch is not available on the build server.
-    url   = "https://api.github.com/repos/#{GITHUB_REPO}/compare/master...#{current_sha}?access_token=#{ENV['GITHUB_TOKEN']}"
+    token = ENV['GITHUB_TOKEN']
+    url   = "https://api.github.com/repos/#{GITHUB_REPO}/compare/master...#{current_sha}?access_token = #{token}"
     files = `curl -i #{url} | grep filename | cut -f2 -d: | grep \.js | tr '"', '\ '`
   else
     files = `git diff master #{current_sha} --name-only | grep .js`
   end
   files.tr!("\n", ' ')
-  files = remove_missing_files(files)
+  cleaned = remove_missing_files(files)
 
-  if files.size > 1
-    puts "\n\nInspecting #{files}"
+  if cleaned.size > 1
+    puts "\n\nInspecting #{cleaned}"
     system("npm install gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
   else
     puts 'No changes made'
   end
 
-  @report = `#{STYLE_CHECKER} #{files}` if files.size > 1
+  @report = `#{STYLE_CHECKER} #{cleaned}` if cleaned.size > 1
 
   if @report && @report.size > 1
     puts @report
