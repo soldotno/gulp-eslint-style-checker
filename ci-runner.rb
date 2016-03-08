@@ -33,6 +33,7 @@ def style_check_modfied_files
   if cleaned.size >= 1
     puts "\n\nInspecting #{cleaned}"
     system("npm install gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
+    system("npm install babel-eslint")
     puts "Running #{STYLE_CHECKER} #{cleaned}"
     @report = `#{STYLE_CHECKER} #{cleaned}`
   else
