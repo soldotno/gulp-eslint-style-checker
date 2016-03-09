@@ -29,6 +29,7 @@ def style_check_modfied_files
     files = `git diff master #{current_sha} --name-only | grep .js`
   end
   files.tr!("\n", ' ')
+  files.gsub!('package.json', '')
   cleaned = remove_missing_files(files)
 
   if cleaned && cleaned.size >= 1
