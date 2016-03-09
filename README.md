@@ -48,6 +48,13 @@ If you want to skip gulp and just use eslint directly that is also possible by a
 
 then this can be executed by running `npm run style-check`. This is not dependent on any packages 
 
-### Only check changed files
-Do this if you only want to run eslint on the files that has been changed.
-Set `ENV['GITHUB_TOKEN']` and add `curl https://gist.githubusercontent.com/stabenfeldt/6994fa3a575542d1df65/raw/d5edfb30a95e9e6cf873369524dbe62c6f55c1a5/eslint.rb | ruby -` to your test steps on your CI server.
+### Integrating with build server
+You might run into trubble if you suddenly start to lint all of your files. E.g. too many files that needs to be updated.
+To avoid this you can run ci-runner.rb to only lint the files that has been changed.
+
+Add this to your build steps:
+
+```bash
+ curl -s https://raw.githubusercontent.com/soldotno/gulp-eslint-style-checker/master/ci-runner.rb | ruby
+ ```
+Remember to set `$GITHUB_TOKEN`.
