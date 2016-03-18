@@ -27,6 +27,6 @@
       "space-infix-ops": 0,
       "no-unused-vars": [1, {"vars": "local", "args": "none"}],
       "no-param-reassign": 0,
-      "prefer-es6-class": 0
+      "react/prefer-es6-class": 0
     }
 }
