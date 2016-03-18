@@ -10,7 +10,7 @@
 ESLINT        = './node_modules/eslint/bin/eslint.js'
 STYLE_CHECKER = "#{ESLINT} -c ./node_modules/gulp-eslint-style-checker/eslintrc.json"
 GITHUB_REPO   = open('.git/config').grep(/github/).first.match(/.*:(.*).git/)[1]
-
+raise "You forgot to set ENV['GITHUB_TOKEN']" unless ENV['GITHUB_TOKEN']
 
 def remove_missing_files(files)
   return if files.empty?
