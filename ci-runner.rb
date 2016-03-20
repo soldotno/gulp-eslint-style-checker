@@ -8,7 +8,9 @@
 #
 
 ESLINT        = './node_modules/eslint/bin/eslint.js'
-STYLE_CHECKER = "#{ESLINT} -c ./node_modules/gulp-eslint-style-checker/eslintrc.json"
+ESLINT_CONFIG = 'eslintrc.json'
+CONFIG_URL    =  'https://raw.githubusercontent.com/soldotno/gulp-eslint-style-checker/master/eslintrc.json'
+STYLE_CHECKER = "#{ESLINT} -c #{ESLINT_CONFIG}"
 GITHUB_REPO   = open('.git/config').grep(/github/).first.match(/.*:(.*).git/)[1]
 
 raise "You forgot to set ENV['GITHUB_TOKEN']" unless ENV['GITHUB_TOKEN']
@@ -20,6 +22,7 @@ def remove_missing_files(files)
 end
 
 def style_check_modfied_files
+  puts "style_check_modfied_files"
   current_sha = `git rev-parse --verify HEAD`.strip!
   if ENV['CI']
     # The master branch is not available on the build server.
@@ -27,6 +30,7 @@ def style_check_modfied_files
     url   = "https://api.github.com/repos/#{GITHUB_REPO}/compare/master...#{current_sha}?access_token=#{token}"
     files = `curl -i #{url} | grep filename | cut -f2 -d: | grep \.js | tr '"', '\ '`
   else
+    puts "not CI"
     files = `git diff master #{current_sha} --name-only | grep .js`
   end
   files.tr!("\n", ' ')
@@ -34,6 +38,8 @@ def style_check_modfied_files
   cleaned = remove_missing_files(files)
 
   if cleaned && cleaned.size >= 1
+    puts "files changed fetching ESLINT_CONFIG"
+    system("wget #{CONFIG_URL} -o #{ESLINT_CONFIG}")
     system("npm i gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
     system("npm i eslint") unless File.exist?(ESLINT)
     puts "Running #{STYLE_CHECKER} #{cleaned}"
