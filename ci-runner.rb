@@ -44,23 +44,21 @@ def modified_files
     files = `git diff master #{current_sha} --name-only | grep .js | grep -v .json`
   end
   files.tr!("\n", ' ')
-  remove_missing_files(files)
+  files.size >= 1 ? remove_missing_files(files) : false
 end
 
 
 def style_check_modfied_files
-  puts "style_check_modfied_files"
-  modified_files
-
-  if modified_files && modified_files.size >= 1
-    puts "modified_files changed #{modified_files}"
+  files = modified_files
+  if files
+    puts "files changed #{files}"
     download_config
     puts "npm i gulp-eslint"
     system("npm i gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
     puts "npm i eslint"
     system("npm i eslint") unless File.exist?(ESLINT)
-    puts "Running #{STYLE_CHECKER} #{modified_files}"
-    @report = `#{STYLE_CHECKER} #{modified_files}`
+    puts "Running #{STYLE_CHECKER} #{files}"
+    @report = `#{STYLE_CHECKER} #{files}`
   else
     puts 'No changes made'
   end
