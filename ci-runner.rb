@@ -50,7 +50,6 @@ end
 def style_check_modfied_files
   files = modified_files
   if files
-    puts "files changed #{files}"
     download_config
     puts "npm i gulp-eslint"
     system("npm i gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
