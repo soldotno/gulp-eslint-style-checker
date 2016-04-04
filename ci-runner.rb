@@ -24,9 +24,7 @@ end
 def download_config
   puts "download config.."
   require 'open-uri'
-
   File.open(ESLINT_CONFIG, "wb") do |eslint_config|
-    # the following "open" is provided by open-uri
     open(CONFIG_URL, "rb") do |downloaded_eslint|
       eslint_config.write(downloaded_eslint.read)
     end
@@ -39,32 +37,30 @@ def modified_files
   current_sha = `git rev-parse --verify HEAD`.strip!
   if ENV['CI']
     # The master branch is not available on the build server.
-    token = ENV['GITHUB_TOKEN']
-    url   = "https://api.github.com/repos/#{GITHUB_REPO}/compare/master...#{current_sha}?access_token=#{token}"
+    url   = "https://api.github.com/repos/#{GITHUB_REPO}/compare/master...#{current_sha}?access_token=#{ENV['GITHUB_TOKEN']}"
     files = `curl -i #{url} | grep filename | cut -f2 -d: | grep .js | grep -v .json | tr '"', '\ '`
   else
     puts "not CI"
     files = `git diff master #{current_sha} --name-only | grep .js | grep -v .json`
   end
   files.tr!("\n", ' ')
-  files.gsub!('package.json', '')
+  remove_missing_files(files)
 end
 
 
 def style_check_modfied_files
   puts "style_check_modfied_files"
+  modified_files
 
-  files = remove_missing_files(modified_files)
-
-  if files && files.size >= 1
-    puts "files changed #{files}"
+  if modified_files && modified_files.size >= 1
+    puts "modified_files changed #{modified_files}"
     download_config
     puts "npm i gulp-eslint"
     system("npm i gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
     puts "npm i eslint"
     system("npm i eslint") unless File.exist?(ESLINT)
-    puts "Running #{STYLE_CHECKER} #{files}"
-    @report = `#{STYLE_CHECKER} #{files}`
+    puts "Running #{STYLE_CHECKER} #{modified_files}"
+    @report = `#{STYLE_CHECKER} #{modified_files}`
   else
     puts 'No changes made'
   end
@@ -73,7 +69,7 @@ def style_check_modfied_files
     puts @report
     exit 1
   else
-    puts "Well done! All files are according to our style guide! :-) "
+    puts "Well done! All modified_files are according to our style guide! :-) "
   end
 end
 
