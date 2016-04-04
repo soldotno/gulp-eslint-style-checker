@@ -29,7 +29,6 @@ def download_config
       eslint_config.write(downloaded_eslint.read)
     end
   end
-
 end
 
 
