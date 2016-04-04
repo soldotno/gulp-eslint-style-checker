@@ -41,10 +41,10 @@ def style_check_modfied_files
     # The master branch is not available on the build server.
     token = ENV['GITHUB_TOKEN']
     url   = "https://api.github.com/repos/#{GITHUB_REPO}/compare/master...#{current_sha}?access_token=#{token}"
-    files = `curl -i #{url} | grep filename | cut -f2 -d: | grep \.js | tr '"', '\ '`
+    files = `curl -i #{url} | grep filename | cut -f2 -d: | grep .js | grep -v .json | tr '"', '\ '`
   else
     puts "not CI"
-    files = `git diff master #{current_sha} --name-only | grep .js`
+    files = `git diff master #{current_sha} --name-only | grep .js | grep -v .json`
   end
   files.tr!("\n", ' ')
   files.gsub!('package.json', '')
