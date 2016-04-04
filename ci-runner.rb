@@ -34,8 +34,8 @@ def download_config
 
 end
 
-def style_check_modfied_files
-  puts "style_check_modfied_files"
+
+def modified_files
   current_sha = `git rev-parse --verify HEAD`.strip!
   if ENV['CI']
     # The master branch is not available on the build server.
@@ -48,21 +48,26 @@ def style_check_modfied_files
   end
   files.tr!("\n", ' ')
   files.gsub!('package.json', '')
-  cleaned = remove_missing_files(files)
+end
 
-  if cleaned && cleaned.size >= 1
-    puts "files changed #{cleaned}"
+
+def style_check_modfied_files
+  puts "style_check_modfied_files"
+
+  files = remove_missing_files(modified_files)
+
+  if files && files.size >= 1
+    puts "files changed #{files}"
     download_config
     puts "npm i gulp-eslint"
     system("npm i gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
     puts "npm i eslint"
     system("npm i eslint") unless File.exist?(ESLINT)
-    puts "Running #{STYLE_CHECKER} #{cleaned}"
-    @report = `#{STYLE_CHECKER} #{cleaned}`
+    puts "Running #{STYLE_CHECKER} #{files}"
+    @report = `#{STYLE_CHECKER} #{files}`
   else
     puts 'No changes made'
   end
-
 
   if @report && @report.size > 1
     puts @report
