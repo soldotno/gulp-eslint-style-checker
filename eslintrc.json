@@ -28,8 +28,9 @@
       "no-unused-vars": [1, {"vars": "local", "args": "none"}],
       "quote-props": [1, "consistent-as-needed"],
       "radix": 0,
+      "func-names": 2,
       "react/prefer-es6-class": 0,
-      "space-infix-ops": 0,
+      "space-infix-ops": 0
     }
 }
 
