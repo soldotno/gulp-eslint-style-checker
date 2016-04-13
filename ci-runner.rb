@@ -11,7 +11,13 @@ ESLINT        = './node_modules/eslint/bin/eslint.js'
 ESLINT_CONFIG = 'eslintrc.json-ci-runner'
 CONFIG_URL    =  'https://raw.githubusercontent.com/soldotno/gulp-eslint-style-checker/master/eslintrc.json'
 STYLE_CHECKER = "#{ESLINT} -c #{ESLINT_CONFIG}"
-GITHUB_REPO   = open('.git/config').grep(/github/).first.match(/.*:(.*).git/)[1]
+
+@git_config = '.git/config'
+
+raise "We need #{@git_config}" unless File.exist?(@git_config)
+
+GITHUB_REPO   = open(@git_config).grep(/github/).first.match(/.*:(.*).git/)[1]
+
 
 raise "You forgot to set ENV['GITHUB_TOKEN']" unless ENV['GITHUB_TOKEN']
 
@@ -51,10 +57,8 @@ def style_check_modfied_files
   files = modified_files
   if files
     download_config
-    puts "npm i gulp-eslint"
-    system("npm i gulp-eslint-style-checker") unless system("grep gulp-eslint-style-checker package.json")
-    puts "npm i eslint"
-    system("npm i eslint") unless File.exist?(ESLINT)
+    puts 'Installing eslint..'
+    system('npm i babel babel-eslint eslint eslint-config-airbnb eslint-plugin-react gulp-eslint minimist --save-dev')
     puts "Running #{STYLE_CHECKER} #{files}"
     @report = `#{STYLE_CHECKER} #{files}`
   else
