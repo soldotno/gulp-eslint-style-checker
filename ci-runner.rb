@@ -12,11 +12,9 @@ ESLINT_CONFIG = 'eslintrc.json-ci-runner'
 CONFIG_URL    =  'https://raw.githubusercontent.com/soldotno/gulp-eslint-style-checker/master/eslintrc.json'
 STYLE_CHECKER = "#{ESLINT} -c #{ESLINT_CONFIG}"
 
-@git_config = '.git/config'
-
-raise "We need #{@git_config}" unless File.exist?(@git_config)
-
-GITHUB_REPO   = open(@git_config).grep(/github/).first.match(/.*:(.*).git/)[1]
+GIT_CONFIG = '.git/config'
+raise "We need #{GIT_CONFIG}" unless File.exist?(GIT_CONFIG)
+GITHUB_REPO   = open(GIT_CONFIG).grep(/github/).first.match(/.*:(.*).git/)[1]
 
 
 raise "You forgot to set ENV['GITHUB_TOKEN']" unless ENV['GITHUB_TOKEN']
