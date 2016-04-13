@@ -59,7 +59,7 @@ def style_check_modfied_files
     download_config
     puts 'Installing eslint..'
     system('npm i babel babel-eslint eslint eslint-config-airbnb eslint-plugin-react gulp-eslint minimist --save-dev')
-    puts "Running #{STYLE_CHECKER} #{files}"
+    puts "\n\n Running #{STYLE_CHECKER} #{files} \n\n"
     @report = `#{STYLE_CHECKER} #{files}`
   else
     puts 'No changes made'
