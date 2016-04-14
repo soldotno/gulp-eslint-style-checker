@@ -23,7 +23,7 @@ def style_check_modfied_files
   if files
     download_config
     puts 'Installing eslint..'
-    system('npm i babel babel-eslint eslint@2.7.0 eslint-plugin-jsx-a11y@latest eslint-plugin-react@4.3.0 eslint-config-airbnb gulp-eslint minimist')
+    system('npm install -g babel babel-eslint eslint@2.7.0 eslint-plugin-jsx-a11y@latest eslint-plugin-react@4.3.0 eslint-config-airbnb gulp-eslint minimist')
     puts "\n\n Running #{STYLE_CHECKER} #{files} \n\n"
     @report = `#{STYLE_CHECKER} #{files}`
   else
