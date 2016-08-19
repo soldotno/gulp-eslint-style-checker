@@ -19,6 +19,7 @@
       "path": true
     },
     "rules": {
+      "key-spacing": ["error", { "mode": "minimum" }],
       "arrow-body-style": [0],
       "max-len": [1, 120, 2, {"ignoreComments": true}],
       "no-cond-assign": [2, "except-parens"],
