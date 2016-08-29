@@ -31,7 +31,8 @@
       "radix": 0,
       "func-names": 2,
       "react/prefer-es6-class": 0,
-      "space-infix-ops": 0
+      "space-infix-ops": 0,
+      "key-spacing": ["error", { align: "value" }]
     }
 }
 
