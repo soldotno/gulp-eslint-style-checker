@@ -19,15 +19,15 @@
     "test": "gulp style-check --config eslintrc.json"
   },
   "dependencies": {
-    "babel": "5.8.35",
-    "babel-eslint": "5.0.0",
-    "eslint": "2.3.0",
-    "eslint-config-airbnb": "4.0.0",
-    "eslint-plugin-react": "3.16.1",
-    "gulp-eslint": "1.1.1",
+    "babel": "6.5.2",
+    "babel-eslint": "7.1.0",
+    "eslint": "3.9.1",
+    "eslint-config-airbnb": "12.0.0",
+    "eslint-plugin-react": "6.4.1",
+    "gulp-eslint": "3.0.1",
     "minimist": "1.2.0"
   },
   "devDependencies": {
-    "gulp": "3.9.0"
+    "gulp": "3.9.1"
   }
 }
