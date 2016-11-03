@@ -8,6 +8,7 @@
     "type": "git",
     "url": "git://github.com/soldotno/gulp-eslint-style-checker.git"
   },
+  "license": "MIT",
   "keywords": [
     "eslint",
     "eslintconfig",
