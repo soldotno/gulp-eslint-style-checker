@@ -1,7 +1,7 @@
 {
   "name": "gulp-eslint-style-checker",
   "description": "Performs code style checking using eslint trough gulp",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "private": false,
   "main": "./lib/eslintChecker.js",
   "repository": {
@@ -26,7 +26,7 @@
     "eslint-config-airbnb": "4.0.0",
     "eslint-plugin-react": "3.16.1",
     "gulp-eslint": "1.1.1",
-    "minimist": "1.2.0"
+    "minimist": "3.0.3"
   },
   "devDependencies": {
     "gulp": "3.9.0"
