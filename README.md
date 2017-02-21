@@ -1,6 +1,8 @@
 Eslint Style Checker
 ===========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/soldotno/gulp-eslint-style-checker.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/soldotno/gulp-eslint-style-checker.svg)](https://travis-ci.org/soldotno/gulp-eslint-style-checker.svg)
 [![Dependencies Status](https://david-dm.org/soldotno/gulp-eslint-style-checker.svg?style=flat)](https://david-dm.org/soldotno/gulp-eslint-style-checker.svg)
 [![DevDependencies Status](https://david-dm.org/soldotno/gulp-eslint-style-checker/dev-status.svg?style=flat)](https://david-dm.org/soldotno/gulp-eslint-style-checker/#info=devDependencies)
